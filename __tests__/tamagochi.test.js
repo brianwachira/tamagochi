@@ -67,4 +67,10 @@ describe('TestGochi', () => {
     jest.advanceTimersByTime(600600);
     expect(testGochi.didYouDie()).toEqual(true);
   });
+
+  test('Game is locked after game is over',()=>{
+    jest.advanceTimersByTime(600600);
+    expect(testGochi.didYouDie()).toEqual(true);
+    expect(testGochi.feed()).toEqual(false);
+  });
 });
