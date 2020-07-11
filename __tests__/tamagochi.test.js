@@ -1,9 +1,13 @@
 import { TamaGochi } from './../src/js/tamagochi.js';
 
+import { TamaGochis } from './../src/js/tamagochi.js';
+
 describe('TestGochi', () => {
 
   jest.useFakeTimers();
   let testGochi;
+  let testGochi2;
+  let testGochis;
 
   beforeEach(function(){
     testGochi = new TamaGochi("TestGochi");
@@ -11,6 +15,10 @@ describe('TestGochi', () => {
     testGochi.setBoredom();
     testGochi.setSleep();
 
+    testGochi2 = new TamaGochi("TestGochi2");
+
+    testGochis = new TamaGochis();
+    
   });
 
   afterEach(function(){
@@ -72,5 +80,12 @@ describe('TestGochi', () => {
     jest.advanceTimersByTime(600600);
     expect(testGochi.didYouDie()).toEqual(true);
     expect(testGochi.feed()).toEqual(false);
+  });  
+  
+  test('Should be able to have multiple tamagochis',()=>{
+    testGochis.addTamagochi(testGochi);
+    testGochis.addTamagochi(testGochi2);
+
+    expect(testGochis.showTamagochis()).toEqual(testGochi.name + testGochi2.name);
   });
 });
