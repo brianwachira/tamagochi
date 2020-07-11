@@ -3,7 +3,7 @@ export class TamaGochi{
     this.name = name;
     this.foodLevel = 10;
     this.playLevel = 10;
-    this.sleepLevel = 10;git s
+    this.awakeLevel = 10;
 
     this.isDead = false;
   }
@@ -19,4 +19,23 @@ export class TamaGochi{
   }
 
 
+  setBoredom(){
+    if(!this.isDead){
+      setInterval(()=>{
+        this.playLevel--;
+      },60000);
+    }else{
+      return false;
+    }
+  }
+
+  setSleep(){
+    if(!this.isDead){
+      setInterval(()=>{
+        this.awakeLevel--;
+      },60000);
+    }else{
+      return false;
+    }
+  }
 }
