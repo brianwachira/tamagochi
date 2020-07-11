@@ -1,10 +1,39 @@
+export class TamaGochis{
+  constructor(){
+    this.tamagochis = [];
+    this.id = 0;
+  }
+
+  addTamagochi(tamagochi){
+    tamagochi.id = this.setId();
+    this.tamagochis.push(tamagochi);
+  }
+
+  setId(){
+    this.id+=1;
+
+    return this.id;
+  }
+
+  showTamagochis(){
+    let names = "";
+    this.tamagochis.forEach(function(tamagochi){
+
+      names+=tamagochi.name;
+    });
+
+    return names;
+  }
+  
+}
+
 export class TamaGochi{
   constructor(name){
     this.name = name;
     this.foodLevel = 10;
     this.playLevel = 10;
     this.awakeLevel = 10;
-
+    this.id = 0;
     this.isDead = false;
   }
 
