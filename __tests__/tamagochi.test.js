@@ -41,9 +41,11 @@ describe('TestGochi', () => {
     expect(testGochi.awakeLevel).toEqual(3);
   });
 
-  test('Should die if food level drops below zero',()=>{
+  test('Should die if food level,play level or awake level drops below zero',()=>{
 
     testGochi.foodLevel = 0;
+    testGochi.playLevel = 4;
+    testGochi.awakeLevel = 0;
     expect(testGochi.didYouDie()).toEqual(true);
   });
 });
