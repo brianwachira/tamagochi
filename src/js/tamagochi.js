@@ -38,4 +38,13 @@ export class TamaGochi{
       return false;
     }
   }
+
+  didYouDie(){
+    if(!this.isDead){
+      if(this.foodLevel <=0){
+        this.isDead = true;
+      }
+    }
+    return this.isDead;
+  }
 }
