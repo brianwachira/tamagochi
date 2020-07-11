@@ -41,7 +41,7 @@ export class TamaGochi{
 
   didYouDie(){
     if(!this.isDead){
-      if(this.foodLevel <=0){
+      if(this.foodLevel <0 || this.playLevel <0 || this.awakeLevel < 0){
         this.isDead = true;
       }
     }
