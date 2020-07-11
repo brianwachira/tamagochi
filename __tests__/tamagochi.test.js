@@ -44,8 +44,14 @@ describe('TestGochi', () => {
   test('Should die if food level,play level or awake level drops below zero',()=>{
 
     testGochi.foodLevel = 0;
-    testGochi.playLevel = 4;
+    testGochi.playLevel = 0;
     testGochi.awakeLevel = 0;
+    expect(testGochi.didYouDie()).toEqual(true);
+  });
+
+  test('Should die if 10 minutes pass without eating, sleeping or resting',()=>{
+
+    jest.advanceTimersByTime(600000)
     expect(testGochi.didYouDie()).toEqual(true);
   });
 });
