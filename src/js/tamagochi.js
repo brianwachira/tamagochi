@@ -47,4 +47,28 @@ export class TamaGochi{
     }
     return this.isDead;
   }
+
+  feed(){
+    if(!this.isDead){
+      this.foodLevel = 10;
+    }else{
+      return false;
+    }
+  }
+
+  play(){
+    if(!this.isDead){
+      this.playLevel = 10;
+    }else{
+      return false;
+    }
+  }
+
+  sleep(){
+    if(!this.isDead){
+      this.awakeLevel = 10;
+    }else{
+      return false;
+    }
+  }
 }
