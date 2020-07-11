@@ -4,10 +4,14 @@
   "description": "It is a handheld, digital pet that can be carried around on a keychain-sized mini computer. Tamagotchis require loving care by pressing buttons to feed them, play with them, and put them to sleep.",
   "main": "main.js",
   "scripts": {
-    "test": "jest --colors"
+    "build": "webpack --mode development",
+    "start": "npm run build & webpack-dev-server --open --mode development",
+    "lint": "eslint src/*.js",
+    "test": "jest --colors",
+    "debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "author": "brianwachira",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
