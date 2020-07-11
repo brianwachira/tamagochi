@@ -54,4 +54,12 @@ describe('TestGochi', () => {
     jest.advanceTimersByTime(600600)
     expect(testGochi.didYouDie()).toEqual(true);
   });
+
+  test('Should have a food level, play level or rest level of 10 if it feeds, plays or rests',()=>{
+    jest.advanceTimersByTime(540000);
+    testGochi.feed();
+    testGochi.play();
+    testGochi.sleep();
+    expect(testGochi.foodLevel).toEqual(10);
+  });
 });
