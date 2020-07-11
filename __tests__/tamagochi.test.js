@@ -39,5 +39,11 @@ describe('TestGochi', () => {
   test('Should have awake level of 3 after 420000 (7 minutes)', ()=>{
     jest.advanceTimersByTime(420000);
     expect(testGochi.awakeLevel).toEqual(3);
-  })
+  });
+
+  test('Should die if food level drops below zero',()=>{
+
+    testGochi.foodLevel = 0;
+    expect(testGochi.didYouDie()).toEqual(true);
+  });
 });
