@@ -51,7 +51,7 @@ describe('TestGochi', () => {
 
   test('Should die if 10 minutes pass without eating, sleeping or resting',()=>{
 
-    jest.advanceTimersByTime(600000)
+    jest.advanceTimersByTime(600600)
     expect(testGochi.didYouDie()).toEqual(true);
   });
 });
