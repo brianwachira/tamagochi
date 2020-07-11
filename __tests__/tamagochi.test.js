@@ -62,4 +62,9 @@ describe('TestGochi', () => {
     testGochi.sleep();
     expect(testGochi.foodLevel).toEqual(10);
   });
+
+  test('Game is over after tamagochi is dead', ()=>{
+    jest.advanceTimersByTime(600600);
+    expect(testGochi.didYouDie()).toEqual(true);
+  });
 });
